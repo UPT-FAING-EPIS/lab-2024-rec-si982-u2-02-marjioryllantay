@@ -73,6 +73,8 @@ dotnet add package Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdap
 dotnet tool install -g dotnet-ef --version 8.0.0
 dotnet tool install -g dotnet-aspnet-codegenerator --version 8.0.0
 ```
+![image](https://github.com/user-attachments/assets/ece7e0f2-9b20-46c5-beaa-4a2012496ae9)
+
 
 3. Abrir Visual Studio Code y elegir la carpeta del proyecto, dentro del proyecto Financiera.WebApp, crear la carpeta Modelos, y dentro de esta crear los siguientes archivos con lo siguientes contenidos:
 > Cliente.cs
@@ -436,6 +438,8 @@ public class FinancieraContexto : DbContext
     } 
 }
 ```
+![image](https://github.com/user-attachments/assets/1a9df0d3-f5d4-4e74-ad81-350e70e3561d)
+
 
 8. En el terminal, ejecutar el siguiente comando para iniciar una base de datos MariaDB:
 ```Bash
