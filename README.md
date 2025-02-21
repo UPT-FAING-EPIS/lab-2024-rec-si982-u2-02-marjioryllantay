@@ -449,17 +449,28 @@ md site && cs site
 eb init Financiera.WebApp -r us-east-1 -p 64bit-amazon-linux-2023-v3.3.0-running-.net-8
 eb create dev-env -s -sr LabRole -ip LabInstanceProfile -db
 ```
+
+![image](https://github.com/user-attachments/assets/86363c33-f77c-47ea-8a0c-d0b764c5e8b1)
+
+
 > Nota: para la base de datos se utilizar las credenciales usuario: sqladmin y password: upt.2025
+
+![image](https://github.com/user-attachments/assets/fd15b3f9-6faf-4c9d-9fce-9547fb0de221)
+
 
 9. En el terminal, verificar las instancias de base de datos creadas.
 ```Bash
 aws rds describe-db-instances
 ```
 
+![image](https://github.com/user-attachments/assets/e8fc607c-0519-4e4f-86cb-b4555997772c)
+
+
 10. En el terminal, ejecutar el siguiente comando para añadir el puerto de entrada a la base de datos (1521) el cual servira para la comunicación, reemplazar el valor de group-id por el valor de VpcSecurityGroupId obtenido en el paso anterior
 ```Bash
 aws ec2 authorize-security-group-ingress --group-id sg-XXXXXXXXXXXXXX --protocol tcp --port 1521 --cidr 0.0.0.0/0
 ```
+![image](https://github.com/user-attachments/assets/9f34db3e-0b3b-4d35-bc21-3d2170c2e415)
 
 11. En Visual Studio Code, editar el archivo appsetting.json, que se encuentra en el proyecto Financiera.WebApp, y adicionar lo siguiente despues de la apertura de la primera llave.
 ```JSON
@@ -488,6 +499,8 @@ cd Financiera.WebApp
 dotnet ef migrations add CrearFinancieraBD
 dotnet ef database update
 ```
+![image](https://github.com/user-attachments/assets/3f992cbd-5892-417a-993d-b38190f353bc)
+
 15. En el terminal, proceder a generar la interfaz del cliente con el siguiente comando:
 ```Bash
 cd Financiera.WebApp
